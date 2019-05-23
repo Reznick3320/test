@@ -4,11 +4,7 @@
 //2) Поміняти картінку на задньому плані
 //3) Видалити рекламу
 
-let sortMenu = document.querySelectorAll('.menu .menu-item'),
-    bg = document.createElement('body'),
-    removeAdv = document.getElementsByClassName('.column .adv');
-
-bg.id = "newBg";
-document.body = bg;
-
-//bg.style.background('../img/apple_true.jpg');
+let bg = document.getElementsByTagName('body'),
+    mune = document.getElementsByClassName('menu');
+mune.style.backgroundColor = 'red';
+bg.style.backgroundImage = 'none';
