@@ -35,6 +35,11 @@ let btnStart = document.getElementById("start"),
     dayValue = document.querySelector('.day-value');
 
 
+    expensesBtn.disabled = true;
+    optionalExpensesBtn.disabled = true;
+    countBtn.disabled = true;
+
+
 let money, time;
 
 btnStart.addEventListener('click', function () {
@@ -49,6 +54,12 @@ btnStart.addEventListener('click', function () {
     yearValue.value = new Date(Date.parse(time)).getFullYear();
     monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
     dayValue.value = new Date(Date.parse(time)).getDate();
+
+    expensesBtn.disabled = false;
+    optionalExpensesBtn.disabled = false;
+    countBtn.disabled = false;
+    
+    
 });
 
 expensesBtn.addEventListener('click', function () {
@@ -146,42 +157,5 @@ let appData = {
     optionalExpenses: {},
     income: [],
     dataTime: time,
-    savings: false,
-    clooseExpenses: function () {
-
-    },
-    delectDayBudget: function () {
-
-        alert = ("Ежедневный бюджет: " + appData.moneyPerDay);
-    },
-    delectLevel: function () {
-
-    },
-    checkSavings: function () {
-        if (appData.savings == true) {
-            let save = +prompt("Какая сумма накоплений"),
-                percent = +prompt("Под какой процент");
-
-
-            alert("Доход в месяц с вашего дипозита: " + appData.MonthIncome);
-        }
-    },
-    clooseOptExpenses: function () {
-
-    },
-    clooseIncome: function () {
-        for (let i = 1; i < 2; i++) {
-
-            if ((typeof (items) === 'string') && (typeof (items) != null) && (items != '')) {
-
-                appData.income.push(prompt("Что может что то ещё", ""));
-                appData.income.sort();
-            } else {
-                i--;
-            }
-        }
-        appData.income.forEach(function (item, i, incomeMass) {
-            alert("Способы дополнительного зароботка: " + incomeMass);
-        });
-    }
+    savings: false    
 };
