@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //Timer
 
-    let deadline = '2019-05-29';
+    let deadline = '2019-06-02';
 
     function getTimeRemaining(endTime) {
         let t = Date.parse(endTime) - Date.parse(new Date()), //дата дедЛайну мінус теперішня дата
